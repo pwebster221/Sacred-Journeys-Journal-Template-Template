@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Journal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f0e6;
+            color: #444;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .question-prompt {
+            background-color: #eae3d2;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            display: block;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .form-iframe {
+            border: none;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        @media (min-width: 768px) {
+            .form-iframe {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Daily Journal</h1>
+
+    <div class="section" id="header">
+        <select name="template_type" id="template_type" required>
+            <option value="daily_journal">Daily Journal</option>
+            <option value="weekly_review">Weekly Review</option>
+            <option value="lunar_review">Lunar Review</option>
+            <option value="solar_review">Solar Review</option>
+        </select>
+
+        <input type="date" name="date" id="date" required>
+
+        <select name="daily_planetary_ruler" id="daily_planetary_ruler" required>
+            <option value="Sun">Sun</option>
+            <option value="Moon">Moon</option>
+            <!-- Add remaining planetary ruler options here -->
+        </select>
+
+        <select name="annual_planetary_ruler" id="annual_planetary_ruler" required>
+            <option value="Sun">Sun</option>
+            <option value="Moon">Moon</option>
+            <!-- Add remaining planetary ruler options here -->
+        </select>
+    </div>
+
+    <div class="section" id="weather-report-review">
+        <label for="weather_report_classification">Weather Report:</label>
+        <textarea name="weather_report_classification" id="weather_report_classification" rows="5"></textarea>
+
+        <div class="question-prompt">Reflect on how your current projects align with your core values and astrological influences. What actions can you take to ensure coherence between your spiritual insights and professional endeavors?</div>
+    </div>
+    
+    <div class="section" id="reading_review">
+        <input type="date" name="previous_date" id="previous_date">
+        <!-- Link to Record will go here based on provided logic -->
+
+        <div class="question-prompt">Reflect on the previous week's energy influences. How did they shape your actions and what insights did you gain regarding your personal growth and spiritual path?</div>
+    </div>
+
+    <div class="section" id="tarot_reading">
+        <iframe src="form.html" class="form-iframe"></iframe>
+
+        <div class="question-prompt">How might the current alignment of celestial bodies influence our intuitive abilities and spiritual growth, and what hidden messages could the stars be conveying about our collective journey?</div>
+    </div>
+
+    <div class="section" id="themes_for_the_day">
+        <input type="text" name="themes_based_on_daily_ruler" id="themes_based_on_daily_ruler" placeholder="Themes based on Daily Ruler">
+        <input type="text" name="themes_based_on_weather" id="themes_based_on_weather" placeholder="Themes based on Weather">
+        <input type="text" name="themes_based_on_reading" id="themes_based_on_reading" placeholder="Themes based on Reading">
+        <textarea name="cohesive_themes_for_today" id="cohesive_themes_for_today" rows="5" placeholder="Cohesive Themes for Today"></textarea>
+    </div>
+
+    <div class="section" id="projects">
+        <!-- Container for project listings -->
+
+        <div class="project-status" id="current_projects_status">
+            <!-- Add content for project status here -->
+        </div>
+    </div>
+
+    <div class="section" id="aligning_projects">
+        <textarea name="aligned_projects" id="aligned_projects" rows="3"></textarea>
+        <input type="text" name="next_steps" id="next_steps" placeholder="Next Steps">
+    </div>
+
+    <div class="section" id="project_listing">
+        <textarea name="projects_and_tasks_for_day" id="projects_and_tasks_for_day" rows="5"></textarea>
+    </div>
+
+    <div class="section" id="closing_thoughts">
+        <div class="question-prompt">What themes resonate with today's planetary ruler, and how can they guide your intentions and actions throughout the day?</div>
+        <div class="question-prompt">How have the energies of the past week, month, or year, as interpreted through your personal astrological chart or tarot readings, influenced your current path and future aspirations?</div>
+        <div class="question-prompt">Reflect on a recent learning experience in an esoteric subject. How has this experience reshaped your understanding or perspective, and what insights have you gained that challenge or expand the traditional boundaries of this field?</div>
+        <div class="question-prompt">What recent revelation have you encountered in your esoteric practice, and how has it reshaped your understanding of the interconnectedness within your chosen discipline?</div>
+        <div class="question-prompt">Based on your accumulated insights from the above questions, reflect on one pivotal question that stands out to guide your overall journey for today.</div>
+    </div>
+</body>
+</html>
