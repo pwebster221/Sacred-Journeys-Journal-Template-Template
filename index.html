@@ -12,22 +12,25 @@
         
         <p> {{field:template_type|type:select|options:daily_journal,weekly_review,lunar_review,solar_review}}</p>
         <p>{{field:date|type:date|format:YYYY-MM-DD}}</p>
-        <p>{{field:daily_planetary_ruler|type:select|options:Sun,…Saturn}}</p>
-        <p>{{field:annual_planetary_ruler|type:select|options:Sun,…Saturn}}</p>
+        <p>{{field:daily_planetary_ruler|type:select|options:Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn}}</p>
+        <p>{{field:annual_planetary_ruler|type:select|options:Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn}}</p>
 
         <h2>[[section:weather-report-review]]</h2>
         <p>{{field:weather_report_classification|type:textarea}}</p>
         <p>{Question Pool: (Esoteric Weather)}</p>
+        <p>{{field:question_pool_response|type:textarea}}</p>
 
 
         <h2>[[section: reading_review]]</h2>
         <p>{{field:previous_date|type:date}}</p>
         <p>{{link_to_record:daily_$previous_date}}</p>
         <p>{Question Pool:(Day of the Week’s Review)}</p>
+        <p>{{field:question_pool_response|type:textarea}}</p>
 
         <h2>[[section:tarot_reading]]</h2>
         <p>{{field:form|type:iframe embedded}}</p>
         <p>{Question Pool:(Day of the Week’s Progressive)}</p>
+        <p>{{field:question_pool_response|type:textarea}}</p>
 
 
         <h2>[[section: Themes_for_the_Day]]</h2>
@@ -51,10 +54,15 @@
 
         <h2>[[section: Closing_Thoughts_and_Final_Wrap-up]]</h2>
         <p>{Question Pool:(Values)}</p>
+        <p>{{field:question_pool_response|type:textarea}}</p>
         <p>{Question Pool:(Education Experiences)}</p>
+        <p>{{field:question_pool_response|type:textarea}}</p>
         <p>{Question Pool:(Where I Stand)}</p>
+        <p>{{field:question_pool_response|type:textarea}}</p>
         <p>{Question Pool:(Esoteric Exploration)}</p>
+        <p>{{field:question_pool_response|type:textarea}}</p>
         <p>{Question Pool:(**One more appropriate question from the above categories**)}</p>
+        <p>{{field:question_pool_response|type:textarea}}</p>
 
             
             

@@ -4,51 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Journal</title>
+    <title>Daily Reflection Journal</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f0e6;
-            color: #444;
-            margin: 0;
-            padding: 20px;
+            background-color: #2A0D4E;
+            color: #FFFAE3;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .question-prompt {
-            background-color: #eae3d2;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
+            margin: 20px;
         }
         input[type="text"], input[type="date"], select, textarea {
-            width: 100%;
+            background-color: #2A0D4E;
+            color: #FFFAE3;
+            border: 2px solid #DEB564;
             padding: 10px;
-            margin: 5px 0 20px;
-            display: block;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-        }
-        .form-iframe {
-            border: none;
             width: 100%;
-            height: 300px;
-            margin-bottom: 20px;
+            box-sizing: border-box;
         }
-        @media (min-width: 768px) {
-            .form-iframe {
-                height: 500px;
-            }
+        textarea {
+            height: 100px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .section {
+            border: 2px solid #FFFAE3;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        .section:hover {
+            border-color: #DEB564;
+        }
+        .question-prompt {
+            margin-top: 10px;
+            padding-left: 15px;
+            border-left: 3px solid #FFFAE3;
         }
     </style>
 </head>
 <body>
-    <h1>Daily Journal</h1>
 
     <div class="section" id="header">
+        <label for="template_type">Template Type:</label>
         <select name="template_type" id="template_type" required>
             <option value="daily_journal">Daily Journal</option>
             <option value="weekly_review">Weekly Review</option>
@@ -56,70 +57,76 @@
             <option value="solar_review">Solar Review</option>
         </select>
 
+        <label for="date">Date of Reflection:</label>
         <input type="date" name="date" id="date" required>
 
+        <label for="daily_planetary_ruler">Daily Planetary Ruler:</label>
         <select name="daily_planetary_ruler" id="daily_planetary_ruler" required>
             <option value="Sun">Sun</option>
-            <option value="Moon">Moon</option>
-            <!-- Add remaining planetary ruler options here -->
+            <!-- Add all other planetary options here -->
         </select>
 
+        <label for="annual_planetary_ruler">Annual Planetary Ruler:</label>
         <select name="annual_planetary_ruler" id="annual_planetary_ruler" required>
             <option value="Sun">Sun</option>
-            <option value="Moon">Moon</option>
-            <!-- Add remaining planetary ruler options here -->
+            <!-- Add all other planetary options here -->
         </select>
     </div>
 
     <div class="section" id="weather-report-review">
-        <label for="weather_report_classification">Weather Report:</label>
-        <textarea name="weather_report_classification" id="weather_report_classification" rows="5"></textarea>
-
-        <div class="question-prompt">Reflect on how your current projects align with your core values and astrological influences. What actions can you take to ensure coherence between your spiritual insights and professional endeavors?</div>
-    </div>
-    
-    <div class="section" id="reading_review">
-        <input type="date" name="previous_date" id="previous_date">
-        <!-- Link to Record will go here based on provided logic -->
-
-        <div class="question-prompt">Reflect on the previous week's energy influences. How did they shape your actions and what insights did you gain regarding your personal growth and spiritual path?</div>
-    </div>
-
-    <div class="section" id="tarot_reading">
-        <iframe src="form.html" class="form-iframe"></iframe>
+        <label for="weather_report_classification">Weather Report Classification:</label>
+        <textarea name="weather_report_classification" id="weather_report_classification" required></textarea>
 
         <div class="question-prompt">How might the current alignment of celestial bodies influence our intuitive abilities and spiritual growth, and what hidden messages could the stars be conveying about our collective journey?</div>
+        <div class="question-prompt">Reflect on the previous week's energy influences. How did they shape your actions and what insights did you gain regarding your personal growth and spiritual path?</div>
+        <!-- Add additional questions from the Esoteric Weather pool here -->
+    </div>
+
+    <div class="section" id="reading-review">
+        <label for="previous_date">Previous Date of Reflection:</label>
+        <input type="date" name="previous_date" id="previous_date">
+
+        <!-- Linking feature placeholder -->
+        <p><a href="{{link_to_record:daily_$previous_date}}" style="color: #DEB564;">Link to Previous Record</a></p>
+
+        <!-- Question Pool placeholder -->
+    </div>
+
+    <!-- Additional sections as per the template structure -->
+
+    <div class="section" id="tarot-reading">
+        <!-- Implement iframe embedding as per specific requirements -->
+        <iframe src="#" title="Tarot Reading" style="width: 100%; height: 400px; border: 2px solid #DEB564;"></iframe>
     </div>
 
     <div class="section" id="themes_for_the_day">
-        <input type="text" name="themes_based_on_daily_ruler" id="themes_based_on_daily_ruler" placeholder="Themes based on Daily Ruler">
-        <input type="text" name="themes_based_on_weather" id="themes_based_on_weather" placeholder="Themes based on Weather">
-        <input type="text" name="themes_based_on_reading" id="themes_based_on_reading" placeholder="Themes based on Reading">
-        <textarea name="cohesive_themes_for_today" id="cohesive_themes_for_today" rows="5" placeholder="Cohesive Themes for Today"></textarea>
+        <label for="themes_based_on_daily_ruler">Themes Based on Daily Ruler:</label>
+        <input type="text" name="themes_based_on_daily_ruler" id="themes_based_on_daily_ruler">
+
+        <label for="themes_based_on_weather">Themes Based on Weather:</label>
+        <input type="text" name="themes_based_on_weather" id="themes_based_on_weather">
+
+        <label for="themes_based_on_reading">Themes Based on Reading:</label>
+        <input type="text" name="themes_based_on_reading" id="themes_based_on_reading">
+
+        <label for="cohesive_themes_for_today">Cohesive Themes for Today:</label>
+        <input type="text" name="cohesive_themes_for_today" id="cohesive_themes_for_today">
     </div>
 
     <div class="section" id="projects">
-        <!-- Container for project listings -->
+        <label for="aligned_projects">Aligned Projects:</label>
+        <input type="text" name="aligned_projects" id="aligned_projects">
 
-        <div class="project-status" id="current_projects_status">
-            <!-- Add content for project status here -->
-        </div>
-    </div>
+        <label for="next_steps">Next Steps:</label>
+        <input type="text" name="next_steps" id="next_steps">
 
-    <div class="section" id="aligning_projects">
-        <textarea name="aligned_projects" id="aligned_projects" rows="3"></textarea>
-        <input type="text" name="next_steps" id="next_steps" placeholder="Next Steps">
-    </div>
-
-    <div class="section" id="project_listing">
-        <textarea name="projects_and_tasks_for_day" id="projects_and_tasks_for_day" rows="5"></textarea>
+        <!-- Project Listing and Status -->
+        <label for="projects_and_tasks_for_day">Projects and Tasks for the Day:</label>
+        <input type="text" name="projects_and_tasks_for_day" id="projects_and_tasks_for_day">
     </div>
 
     <div class="section" id="closing_thoughts">
-        <div class="question-prompt">What themes resonate with today's planetary ruler, and how can they guide your intentions and actions throughout the day?</div>
-        <div class="question-prompt">How have the energies of the past week, month, or year, as interpreted through your personal astrological chart or tarot readings, influenced your current path and future aspirations?</div>
-        <div class="question-prompt">Reflect on a recent learning experience in an esoteric subject. How has this experience reshaped your understanding or perspective, and what insights have you gained that challenge or expand the traditional boundaries of this field?</div>
-        <div class="question-prompt">What recent revelation have you encountered in your esoteric practice, and how has it reshaped your understanding of the interconnectedness within your chosen discipline?</div>
+        <!-- Implement question pools and reflective prompts -->
         <div class="question-prompt">Based on your accumulated insights from the above questions, reflect on one pivotal question that stands out to guide your overall journey for today.</div>
     </div>
 </body>
