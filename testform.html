@@ -1,58 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Sacred Journal</title>
+    <title>Daily Journal Reflection</title>
     <style>
         body {
             background-color: #2A0D4E;
             color: #FFFAE3;
-            font-family: 'Arial', sans-serif;
-            margin: 20px;
+            font-family: 'Georgia', serif;
             padding: 20px;
-            line-height: 1.6;
-        }
-        input, select, textarea {
-            background-color: #2A0D4E;
-            color: #FFFAE3;
-            border: 1px solid #DEB564;
-            padding: 10px;
-            margin-bottom: 10px;
-            width: 100%;
         }
         label {
-            font-weight: bold;
-            margin-bottom: 5px;
             display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea, select {
+            background-color: #2A0D4E;
+            border: 1px solid #DEB564;
+            color: #FFFAE3;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        textarea {
+            height: 100px;
         }
         .question-prompt {
-            margin: 20px 0;
+            margin: 15px 0;
             padding: 10px;
             border: 1px solid #FFFAE3;
         }
-        section {
-            margin-bottom: 30px;
-        }
-        fieldset {
-            border: 2px solid #FFFAE3;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
-            margin-bottom: 20px;
-        }
-        legend {
-            color: #DEB564;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>Daily Sacred Journal Reflection</h1>
+    <div class="container">
+        <h1>Daily Journal Template</h1>
 
-    <section>
-        <fieldset>
-            <legend>Header</legend>
-            <label for="template_type">Template Type:</label>
+        <!-- Header Section -->
+        <section id="header">
+            <label for="template_type">Journal Type</label>
             <select name="template_type" id="template_type" required>
                 <option value="daily_journal">Daily Journal</option>
                 <option value="weekly_review">Weekly Review</option>
@@ -63,65 +56,58 @@
             <label for="date">Date of Reflection:</label>
             <input type="date" name="date" id="date" required>
 
-            <label for="daily_planetary_ruler">Daily Planetary Ruler:</label>
+            <label for="daily_planetary_ruler">Daily Planetary Ruler</label>
             <select name="daily_planetary_ruler" id="daily_planetary_ruler" required>
-                <option value="Sun">Sun</option>
-                <option value="Moon">Moon</option>
-                <option value="Mercury">Mercury</option>
-                <option value="Venus">Venus</option>
-                <option value="Mars">Mars</option>
-                <option value="Jupiter">Jupiter</option>
-                <option value="Saturn">Saturn</option>
+                <option>Sun</option>
+                <option>Moon</option>
+                <option>Mercury</option>
+                <option>Venus</option>
+                <option>Mars</option>
+                <option>Jupiter</option>
+                <option>Saturn</option>
             </select>
 
-            <label for="annual_planetary_ruler">Annual Planetary Ruler:</label>
+            <label for="annual_planetary_ruler">Annual Planetary Ruler</label>
             <select name="annual_planetary_ruler" id="annual_planetary_ruler" required>
-                <option value="Sun">Sun</option>
-                <option value="Moon">Moon</option>
-                <option value="Mercury">Mercury</option>
-                <option value="Venus">Venus</option>
-                <option value="Mars">Mars</option>
-                <option value="Jupiter">Jupiter</option>
-                <option value="Saturn">Saturn</option>
+                <option>Sun</option>
+                <option>Moon</option>
+                <option>Mercury</option>
+                <option>Venus</option>
+                <option>Mars</option>
+                <option>Jupiter</option>
+                <option>Saturn</option>
             </select>
-        </fieldset>
-    </section>
+        </section>
 
-    <section>
-        <fieldset>
-            <legend>Weather Report Review</legend>
+        <!-- Weather Report Review -->
+        <section id="weather-report-review">
             <label for="weather_report_classification">Weather Report Classification:</label>
-            <textarea name="weather_report_classification" id="weather_report_classification" rows="5"></textarea>
+            <textarea name="weather_report_classification" id="weather_report_classification"></textarea>
 
             <div class="question-prompt">How might the current alignment of celestial bodies influence our intuitive abilities and spiritual growth, and what hidden messages could the stars be conveying about our collective journey?</div>
-            <textarea name="question_pool_response" id="question_pool_response" rows="5"></textarea>
-        </fieldset>
-    </section>
+            <textarea name="question_pool_response" id="question_pool_response"></textarea>
+        </section>
 
-    <section>
-        <fieldset>
-            <legend>Reading Review</legend>
+        <!-- Reading Review -->
+        <section id="reading_review">
             <label for="previous_date">Previous Date:</label>
             <input type="date" name="previous_date" id="previous_date">
 
             <div class="question-prompt">Reflect on the previous week's energy influences. How did they shape your actions and what insights did you gain regarding your personal growth and spiritual path?</div>
-            <textarea name="question_pool_response" id="question_pool_response" rows="5"></textarea>
-        </fieldset>
-    </section>
+            <textarea name="question_pool_response" id="question_pool_response"></textarea>
+        </section>
 
-    <section>
-        <fieldset>
-            <legend>Tarot Reading</legend>
-            <iframe src="path_to_tarot_reading" name="form" style="width:100%; height:200px;"></iframe>
+        <!-- Tarot Reading -->
+        <section id="tarot_reading">
+            <h2>Weekly Tarot Reading</h2>
+            <iframe class="airtable-embed" src="<choose-based-on-current-day-of-week>" frameborder="0" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
             <div class="question-prompt">How does the assertive energy of Mars influence your interactions with others this week, and how can you harness the qualities of each cardinal sign--Aries' initiative, Cancer's nurturing, Libra's balance, and Capricorn's discipline--to navigate challenges and opportunities in both personal and professional spheres?</div>
-            <textarea name="question_pool_response" id="question_pool_response" rows="5"></textarea>
-        </fieldset>
-    </section>
+            <textarea name="question_pool_response" id="question_pool_response"></textarea>
+        </section>
 
-    <section>
-        <fieldset>
-            <legend>Themes for the Day</legend>
+        <!-- Themes for the Day -->
+        <section id="themes_for_the_day">
             <label for="themes_based_on_daily_ruler">Themes Based on Daily Ruler:</label>
             <input type="text" name="themes_based_on_daily_ruler" id="themes_based_on_daily_ruler">
 
@@ -133,66 +119,37 @@
 
             <label for="cohesive_themes_for_today">Cohesive Themes for Today:</label>
             <input type="text" name="cohesive_themes_for_today" id="cohesive_themes_for_today">
-        </fieldset>
-    </section>
+        </section>
 
-    <section>
-        <fieldset>
-            <legend>Projects</legend>
+        <!-- Projects -->
+        <section id="projects">
             <label for="current_projects">Current Projects:</label>
-            <input type="text" name="current_projects" id="current_projects">
+            <textarea name="project_list:current_projects" id="current_projects"></textarea>
 
             <label for="current_projects_status">Current Projects Status:</label>
-            <input type="text" name="current_projects_status" id="current_projects_status">
-        </fieldset>
-    </section>
+            <textarea name="project_status:current_projects_status" id="current_projects_status"></textarea>
+        </section>
 
-    <section>
-        <fieldset>
-            <legend>Aligning Projects</legend>
+        <!-- Aligning Projects -->
+        <section id="aligning_projects">
             <label for="aligned_projects">Aligned Projects:</label>
-            <input type="text" name="aligned_projects" id="aligned_projects" multiple>
+            <textarea name="aligned_projects" id="aligned_projects"></textarea>
 
             <label for="next_steps">Next Steps:</label>
-            <input type="text" name="next_steps" id="next_steps">
-        </fieldset>
-    </section>
+            <textarea name="next_steps" id="next_steps"></textarea>
+        </section>
 
-    <section>
-        <fieldset>
-            <legend>Project Listing</legend>
-            <label for="projects_and_tasks_for_day">Projects and Tasks for Day:</label>
-            <input type="text" name="projects_and_tasks_for_day" id="projects_and_tasks_for_day" multiple>
-        </fieldset>
-    </section>
-
-    <section>
-        <fieldset>
-            <legend>Closing Thoughts and Final Wrap-up</legend>
-            <div class="question-prompt">How do the core values represented by your astrological birth chart influence your decision-making and interactions with others in your daily life?</div>
-            <textarea name="question_pool_response" id="question_pool_response" rows="5"></textarea>
-
-            <div class="question-prompt">Reflect on a recent learning experience in an esoteric subject. How has this experience reshaped your understanding or perspective, and what insights have you gained that challenge or expand the traditional boundaries of this field?</div>
-            <textarea name="question_pool_response" id="question_pool_response" rows="5"></textarea>
+        <!-- Closing Thoughts and Final Wrap-up -->
+        <section id="closing_thoughts">
+            <div class="question-prompt">What themes resonate with today's planetary ruler, and how can they guide your intentions and actions throughout the day?</div>
+            <textarea name="question_pool_response" id="question_pool_response"></textarea>
 
             <div class="question-prompt">Reflect on how your current projects align with your core values and astrological influences. What actions can you take to ensure coherence between your spiritual insights and professional endeavors?</div>
-            <textarea name="question_pool_response" id="question_pool_response" rows="5"></textarea>
-        </fieldset>
-    </section>
+            <textarea name="question_pool_response" id="question_pool_response"></textarea>
 
-    <section>
-        <fieldset>
-            <legend>Esoteric Exploration</legend>
             <div class="question-prompt">How have the energies of the past week, month, or year, as interpreted through your personal astrological chart or tarot readings, influenced your current path and future aspirations?</div>
-            <textarea name="question_pool_response" id="question_pool_response" rows="5"></textarea>
-
-            <div class="question-prompt">What recent revelation have you encountered in your esoteric practice, and how has it reshaped your understanding of the interconnectedness within your chosen discipline?</div>
-            <textarea name="question_pool_response" id="question_pool_response" rows="5"></textarea>
-
-            <div class="question-prompt">Based on your accumulated insights from the above questions, reflect on one pivotal question that stands out to guide your overall journey for today.</div>
-            <textarea name="question_pool_response" id="question_pool_response" rows="5"></textarea>
-        </fieldset>
-    </section>
-
+            <textarea name="question_pool_response" id="question_pool_response"></textarea>
+        </section>
+    </div>
 </body>
 </html>
