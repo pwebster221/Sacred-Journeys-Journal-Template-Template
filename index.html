@@ -1,0 +1,64 @@
+<DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Journal Template Template</title>
+    </head>
+    <body>
+        <h1> Daily Journal Template </h1>
+
+        <h2>[[section:header]]</h2>
+        
+        <p> {{field:template_type|type:select|options:daily_journal,weekly_review,lunar_review,solar_review}}</p>
+        <p>{{field:date|type:date|format:YYYY-MM-DD}}</p>
+        <p>{{field:daily_planetary_ruler|type:select|options:Sun,…Saturn}}</p>
+        <p>{{field:annual_planetary_ruler|type:select|options:Sun,…Saturn}}</p>
+
+        <h2>[[section:weather-report-review]]</h2>
+        <p>{{field:weather_report_classification|type:textarea}}</p>
+        <p>{Question Pool: (Esoteric Weather)}</p>
+
+
+        <h2>[[section: reading_review]]</h2>
+        <p>{{field:previous_date|type:date}}</p>
+        <p>{{link_to_record:daily_$previous_date}}</p>
+        <p>{Question Pool:(Day of the Week’s Review)}</p>
+
+        <h2>[[section:tarot_reading]]</h2>
+        <p>{{field:form|type:iframe embedded}}</p>
+        <p>{Question Pool:(Day of the Week’s Progressive)}</p>
+
+
+        <h2>[[section: Themes_for_the_Day]]</h2>
+        <p>{{field:themes_based_on_daily_ruler|type:text}}</p>
+        <p>{{field:themes_based_on_weather|type:text}}</p>
+        <p>{{field:themes_based_on_reading|type:text}}</p>
+        <p>{{field:cohesive_themes_for_today|type:text}}</p>
+
+
+
+        <h2>[[section: Projects]] </h2>
+        <p>{{project_list:current_projects}}</p>
+        <p>{{project_status:current_projects_status}}</p>
+
+        <h2>[[section: Aligning_Projects]]</h2>
+        <p>{{field:aligned_projects|type:array|array_type:text}}</p>
+        <p>{{field:next_steps|type:text}}</p>
+
+        <h2>[[section: Project_Listing]]</h2>
+        <p>{{field:projects_and_tasks_for_day|type:array|array_type:text}}</p>
+
+        <h2>[[section: Closing_Thoughts_and_Final_Wrap-up]]</h2>
+        <p>{Question Pool:(Values)}</p>
+        <p>{Question Pool:(Education Experiences)}</p>
+        <p>{Question Pool:(Where I Stand)}</p>
+        <p>{Question Pool:(Esoteric Exploration)}</p>
+        <p>{Question Pool:(**One more appropriate question from the above categories**)}</p>
+
+            
+            
+            
+    </body>
+</html>  
+ 
