@@ -1,0 +1,157 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #2A0D4E;
+            color: #FFFAE3;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="date"],
+        select,
+        textarea {
+            background-color: #2A0D4E;
+            color: #FFFAE3;
+            border: 1px solid #DEB564;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .question-prompt {
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .airtable-embed {
+            width: 100%;
+            border: 1px solid #FFFAE3;
+            margin: 20px 0;
+        }
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #FFFAE3;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+    </style>
+    <title>Daily Journal Reflection</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <section id="header">
+        <label for="template_type">Template Type:</label>
+        <select name="template_type" id="template_type" required>
+            <option value="daily_journal">Daily Journal</option>
+            <option value="weekly_review">Weekly Review</option>
+            <option value="lunar_review">Lunar Review</option>
+            <option value="solar_review">Solar Review</option>
+        </select>
+
+        <label for="date">Date of Reflection:</label>
+        <input type="date" name="date" id="date" required>
+
+        <label for="daily_planetary_ruler">Daily Planetary Ruler:</label>
+        <select name="daily_planetary_ruler" id="daily_planetary_ruler" required>
+            <option value="Sun">Sun</option>
+            <option value="Moon">Moon</option>
+            <option value="Mercury">Mercury</option>
+            <option value="Venus">Venus</option>
+            <option value="Mars">Mars</option>
+            <option value="Jupiter">Jupiter</option>
+            <option value="Saturn">Saturn</option>
+        </select>
+
+        <label for="annual_planetary_ruler">Annual Planetary Ruler:</label>
+        <select name="annual_planetary_ruler" id="annual_planetary_ruler" required>
+            <option value="Sun">Sun</option>
+            <option value="Moon">Moon</option>
+            <option value="Mercury">Mercury</option>
+            <option value="Venus">Venus</option>
+            <option value="Mars">Mars</option>
+            <option value="Jupiter">Jupiter</option>
+            <option value="Saturn">Saturn</option>
+        </select>
+    </section>
+
+    <!-- Weather Report Review Section -->
+    <section id="weather-report-review">
+        <label for="weather_report_classification">Weather Report Classification:</label>
+        <textarea name="weather_report_classification" id="weather_report_classification" rows="4"></textarea>
+
+        <div class="question-prompt">
+            How do the daily ruling planets today influence the themes emerging from your weather forecast and recent readings?
+        </div>
+        <textarea name="question_pool_response" rows="4"></textarea>
+    </section>
+
+    <!-- Reading Review Section -->
+    <section id="reading-review">
+        <label for="previous_date">Previous Date:</label>
+        <input type="date" name="previous_date" id="previous_date">
+
+        <!-- Example of linking. Actual implementation may vary based on system -->
+        <div>{{link_to_record:daily_$previous_date}}</div>
+
+        <div class="question-prompt">
+            How might the current alignment of celestial bodies influence our intuitive abilities and spiritual growth, and what hidden messages could the stars be conveying about our collective journey?
+        </div>
+        <textarea name="question_pool_response" rows="4"></textarea>
+    </section>
+
+    <!-- Tarot Reading and Iframe Embedding Section -->
+    <section id="tarot-reading">
+        <iframe class="airtable-embed" src="https://airtable.com/embed/app5fsRyc8pQAEBhY/pagJtbwom6vdgfq63/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent;"></iframe>
+
+        <div class="question-prompt">
+            How can the interplay between Mars' energy and the archetypes of the cardinal zodiac signs be interpreted through the lens of Tarot's Major Arcana, and what insights might this provide into the active forces shaping my week?
+        </div>
+        <textarea name="question_pool_response" rows="4"></textarea>
+    </section>
+
+    <!-- Themes for the Day Section -->
+    <section id="themes-for-the-day">
+        <label for="themes_based_on_daily_ruler">Themes Based on Daily Ruler:</label>
+        <input type="text" name="themes_based_on_daily_ruler" id="themes_based_on_daily_ruler">
+
+        <label for="themes_based_on_weather">Themes Based on Weather:</label>
+        <input type="text" name="themes_based_on_weather" id="themes_based_on_weather">
+
+        <label for="themes_based_on_reading">Themes Based on Reading:</label>
+        <input type="text" name="themes_based_on_reading" id="themes_based_on_reading">
+
+        <label for="cohesive_themes_for_today">Cohesive Themes for Today:</label>
+        <input type="text" name="cohesive_themes_for_today" id="cohesive_themes_for_today">
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="question-prompt">
+            Reflecting on the past week, how did the energies of your personal numerology influence the opportunities for growth that you either embraced or overlooked? Consider how these insights can guide your future decisions and strategies for development.
+        </div>
+        <textarea name="question_pool_response" rows="4"></textarea>
+    </section>
+
+    <!-- Closing Thoughts Section -->
+    <section id="closing-thoughts">
+        <div class="question-prompt">
+            How have the insights gained from your exploration of [esoteric subject] over the past week, month, or year influenced your understanding of your personal journey, and how can you integrate these lessons to align more closely with your future aspirations?
+        </div>
+        <textarea name="question_pool_response" rows="4"></textarea>
+    </section>
+
+</body>
+</html>
+```
