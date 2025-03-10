@@ -12,38 +12,65 @@
         
         <p> {{field:template_type|type:select|options:daily_journal,weekly_review,lunar_review,solar_review}}</p>
         <p>{{field:date|type:date|format:YYYY-MM-DD}}</p>
-        <p>{{field:daily_planetary_ruler|type:select|options:Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn}}</p>
-        <p>{{field:annual_planetary_ruler|type:select|options:Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn}}</p>
-
+       
         <h2>[[section:weather-report-review]]</h2>
-        <p>{{field:weather_report_classification|type:textarea}}</p>
-        <p>{Question Pool: (Esoteric Weather)}</p>
+        <p>{{Daily Ruler, Daily Sign, Daily House: [insert from Daily Weather Report]}}}</p>
+        <p>{{Annual Ruler, Annual Sign, Annual House: [insert from Daily Weather Report]}}</p>
+        <p>{{Sun Sign, Sun House: [insert from Daily Weather Report]}}</p>
+        <p>{{Moon Sign, Moon House, Moon Phase: [insert from Daily Weather Report}}</p>
+        
+        <p>{Question Pool: (Esoteric Weather- Exploring the effects of the "weather report" on my day)}</p>
         <p>{{field:question_pool_response|type:textarea}}</p>
 
 
         <h2>[[section: reading_review]]</h2>
-        <p>{{field:previous_date|type:date}}</p>
-        <p>{{link_to_record:daily_$previous_date}}</p>
+        <p>{{previous_date: (current date - seven days, or 1 week ago)}}</p>
         <p>{Question Pool:(Day of the Week’s Review)}</p>
         <p>{{field:question_pool_response|type:textarea}}</p>
 
         <h2>[[section:tarot_reading]]</h2>
-        <p>{{field:form|type:iframe embedded}}</p>
         <p>{Question Pool:(Day of the Week’s Progressive)}</p>
         <p>{{field:question_pool_response|type:textarea}}</p>
 
 
         <h2>[[section: Themes_for_the_Day]]</h2>
-        <p>{{field:themes_based_on_daily_ruler|type:text}}</p>
-        <p>{{field:themes_based_on_weather|type:text}}</p>
-        <p>{{field:themes_based_on_reading|type:text}}</p>
-        <p>{{field:cohesive_themes_for_today|type:text}}</p>
+        <p>{{field:themes_based_on_daily_ruler|type:textarea}}</p>
+        <p>{{field:themes_based_on_weather|type:textarea}}</p>
+        <p>{{field:themes_based_on_reading|type:textarea}}</p>
+        <p>{{field:cohesive_themes_for_today|type:textarea}}</p>
 
 
 
         <h2>[[section: Projects]] </h2>
-        <p>{{project_list:current_projects}}</p>
-        <p>{{project_status:current_projects_status}}</p>
+        <p>{{field: table|project_list_status_table:current_projects x project_status}}</p>
+        <p>Example Table</p>
+        <table>
+            <tr>
+                <th>Project Name</th>
+                <th>Completion %</th>
+                <th>Project Status</th>
+            </tr>
+            <tr>
+                <td>{{field:ProjectName|type:textarea}}</td>
+                <td>{{field:Completion%|type:integer}}</td>
+                <td>{{field:ProjectStatus|type:select|options:(Thoughts & Ideation, Drafting & Conceptualizing, Building, Final Review, Complete)}}</td>
+            </tr>
+            <tr>
+                <td>{{field:ProjectName|type:textarea}}</td>
+                <td>{{field:Completion%|type:integer}}</td>
+                <td>{{field:ProjectStatus|type:select|options:(Thoughts & Ideation, Drafting & Conceptualizing, Building, Final Review, Complete)}}</td>
+            </tr>
+            <tr>
+                <td>{{field:ProjectName|type:textarea}}</td>
+                <td>{{field:Completion%|type:integer}}</td>
+                <td>{{field:ProjectStatus|type:select|options:(Thoughts & Ideation, Drafting & Conceptualizing, Building, Final Review, Complete)}}</td>
+            </tr>
+            <tr>
+                <td>{{field:ProjectName|type:textarea}}</td>
+                <td>{{field:Completion%|type:integer}}</td>
+                <td>{{field:ProjectStatus|type:select|options:(Thoughts & Ideation, Drafting & Conceptualizing, Building, Final Review, Complete)}}</td>
+            </tr>
+        </table>
 
         <h2>[[section: Aligning_Projects]]</h2>
         <p>{{field:aligned_projects|type:array|array_type:text}}</p>
