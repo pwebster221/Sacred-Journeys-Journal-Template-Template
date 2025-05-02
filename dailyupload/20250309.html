@@ -4,64 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sacred Daily Journal</title>
-    <style>
-        body {
-            background-color: #2A0D4E;
-            color: #FFFAE3;
-            font-family: 'Times New Roman', Times, serif;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        form {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            border: 2px solid #FFFAE3;
-            border-radius: 10px;
-        }
-        h1, h2 {
-            text-align: center;
-            color: #DEB564;
-        }
-        label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 2px solid #DEB564;
-            background-color: #2A0D4E;
-            color: #FFFAE3;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        textarea {
-            height: 100px;
-        }
-        table {
-            width: 100%;
-            margin-bottom: 20px;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 2px solid #DEB564;
-            padding: 10px;
-            text-align: left;
-        }
-        iframe {
-            border: 2px solid #DEB564;
-            margin-bottom: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <title>Daily Journal Reflection</title>
 </head>
 <body>
-    <form>
-        <h1>Sacred Daily Journal</h1>
 
-        <label for="template_type">Type of Reflection:</label>
+    <!-- Header Section -->
+    <section id="header">
+        <label for="template_type">Template Type:</label>
         <select name="template_type" id="template_type" required>
             <option value="daily_journal">Daily Journal</option>
             <option value="weekly_review">Weekly Review</option>
@@ -72,68 +22,93 @@
         <label for="date">Date of Reflection:</label>
         <input type="date" name="date" id="date" required>
 
-        <h2>Weather Report Review</h2>
 
-        <label for="daily_weather_input">Daily Astrology Overview:</label>
-        <textarea name="daily_weather_input" id="daily_weather_input" readonly>
-        Daily Ruler, Daily Sign, Daily House: Sun in Pisces in the 10th House.
-        Annual Ruler, Annual Sign, Annual House: Mercury in Aries in the 11th House.
-        Sun Sign, Sun House: Pisces in the 10th House.
-        Moon Sign, Moon House, Moon Phase: Cancer in the 2nd House, First Quarter Moon.
-        </textarea>
+    <!-- Weather Report Review Section -->
+    <section id="weather-report-review">
+        <label for="weather_report_classification">Weather Report Classification:</label>
+            <label for="annual_planetary_ruler">Annual Planetary Ruler:</label>
+            <select name="annual_planetary_ruler" id="annual_planetary_ruler" required>
+                <option value="Sun">Sun</option>
+                <option value="Moon">Moon</option>
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+            
+        <label for="daily_planetary_ruler">Daily Planetary Ruler:</label>
+        <select name="daily_planetary_ruler" id="daily_planetary_ruler" required>
+            <option value="Sun">Sun</option>
+            <option value="Moon">Moon</option>
+            <option value="Mercury">Mercury</option>
+            <option value="Venus">Venus</option>
+            <option value="Mars">Mars</option>
+            <option value="Jupiter">Jupiter</option>
+            <option value="Saturn">Saturn</option>
+        </select>
+            </select>
+        </section>
+        <div class="question-prompt">
+            How do the daily ruling planets today influence the themes emerging from your weather forecast and recent readings?
+        </div>
+        <textarea name="question_pool_response" rows="4"></textarea>
+    </section>
 
-        <label for="question_pool_esoteric">Esoteric Weather Reflection:</label>
-        <textarea name="question_pool_esoteric" id="question_pool_esoteric" placeholder="Reflect on how the current astrological weather influences your inner and outer world."></textarea>
+    <!-- Reading Review Section -->
+    <section id="reading-review">
+        <label for="previous_date">Previous Date:</label>
+        <input type="date" name="previous_date" id="previous_date">
 
-        <h2>Tarot Reading Reflections</h2>
+        <!-- Example of linking. Actual implementation may vary based on system -->
+        <div>{{link_to_record:daily_$previous_date}}</div>
 
-        <label for="tarot_insight">Tarot Insight:</label>
-        <textarea name="tarot_insight" id="tarot_insight" readonly>
-        Archetypes: Knight of Cups, King of Wands, Four of Swords, The Hermit, The Chariot.
-        Journey through themes of intuition, creative leadership, contemplative rest, inner wisdom, and balanced action.
-        </textarea>
+        <div class="question-prompt">
+            How might the current alignment of celestial bodies influence our intuitive abilities and spiritual growth, and what hidden messages could the stars be conveying about our collective journey?
+        </div>
+        <textarea name="question_pool_response" rows="4"></textarea>
+    </section>
 
-        <label for="question_pool_tarot">Tarot Reflection:</label>
-        <textarea name="question_pool_tarot" id="question_pool_tarot" placeholder="Reflect on the archetypes and their messages. What do they correspond with in your life currently?"></textarea>
+    <!-- Tarot Reading and Iframe Embedding Section -->
+    <section id="tarot-reading">
+        <iframe class="airtable-embed" src="https://airtable.com/embed/app5fsRyc8pQAEBhY/pagJtbwom6vdgfq63/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent;"></iframe>
 
-        <h2>Projects and Alignments</h2>
+        <div class="question-prompt">
+            How can the interplay between Mars' energy and the archetypes of the cardinal zodiac signs be interpreted through the lens of Tarot's Major Arcana, and what insights might this provide into the active forces shaping my week?
+        </div>
+        <textarea name="question_pool_response" rows="4"></textarea>
+    </section>
 
-        <label for="project_list">Project List and Status:</label>
-        <table>
-            <tr>
-                <th>Project Name</th>
-                <th>Completion %</th>
-                <th>Status</th>
-            </tr>
-            <tr>
-                <td><textarea name="ProjectName1"></textarea></td>
-                <td><input type="number" name="Completion1" min="0" max="100"></td>
-                <td>
-                    <select name="ProjectStatus1">
-                        <option value="Thoughts & Ideation">Thoughts & Ideation</option>
-                        <option value="Drafting & Conceptualizing">Drafting & Conceptualizing</option>
-                        <option value="Building">Building</option>
-                        <option value="Final Review">Final Review</option>
-                        <option value="Complete">Complete</option>
-                    </select>
-                </td>
-            </tr>
-            <!-- Repeat rows as needed -->
-        </table>
+    <!-- Themes for the Day Section -->
+    <section id="themes-for-the-day">
+        <label for="themes_based_on_daily_ruler">Themes Based on Daily Ruler:</label>
+        <input type="text" name="themes_based_on_daily_ruler" id="themes_based_on_daily_ruler">
 
-        <label for="aligned_projects">Aligned Projects:</label>
-        <textarea name="aligned_projects" id="aligned_projects" placeholder="How do your current project align with today's themes?"></textarea>
+        <label for="themes_based_on_weather">Themes Based on Weather:</label>
+        <input type="text" name="themes_based_on_weather" id="themes_based_on_weather">
 
-        <h2>Closing Thoughts and Reflections</h2>
+        <label for="themes_based_on_reading">Themes Based on Reading:</label>
+        <input type="text" name="themes_based_on_reading" id="themes_based_on_reading">
 
-        <label for="closing_thoughts">Final Insights:</label>
-        <textarea name="closing_thoughts" id="closing_thoughts" placeholder="Summarize your insights and the ways in which the day has guided you."></textarea>
-    
-        <h2>Submit Your Reflection</h2>
+        <label for="cohesive_themes_for_today">Cohesive Themes for Today:</label>
+        <input type="text" name="cohesive_themes_for_today" id="cohesive_themes_for_today">
+    </section>
 
-        <!-- Embed appropriate iframe based on the day -->
-        <iframe class="airtable-embed" src="https://airtable.com/embed/app5fsRyc8pQAEBhY/pagIhE8kiNJCGUQQp/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
-    </form>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="question-prompt">
+            Reflecting on the past week, how did the energies of your personal numerology influence the opportunities for growth that you either embraced or overlooked? Consider how these insights can guide your future decisions and strategies for development.
+        </div>
+        <textarea name="question_pool_response" rows="4"></textarea>
+    </section>
+
+    <!-- Closing Thoughts Section -->
+    <section id="closing-thoughts">
+        <div class="question-prompt">
+            How have the insights gained from your exploration of [esoteric subject] over the past week, month, or year influenced your understanding of your personal journey, and how can you integrate these lessons to align more closely with your future aspirations?
+        </div>
+        <textarea name="question_pool_response" rows="4"></textarea>
+    </section>
+
 </body>
 </html>
 ```

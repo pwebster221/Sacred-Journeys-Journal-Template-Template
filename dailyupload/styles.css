@@ -1,0 +1,55 @@
+body {
+      background-color: #2A0D4E;
+      color: #FFFAE3;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      box-sizing: border-box;
+      background-image: /dailyupload/static/DailyBackground.jpeg;
+      background-position: top;
+      background-size: auto;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center;
+      }
+#header {
+      display: flex;
+      flex-grow: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      }
+label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      }
+input[type="date"],
+select,
+textarea {
+      background-color: #2A0D4E;
+      color: #FFFAE3;
+      border: 1px solid #DEB564;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      }
+.question-prompt {
+      margin: 20px 0;
+      font-style: italic;
+        }
+.airtable-embed {
+      width: 100%;
+      border: 1px solid #FFFAE3;
+      margin: 20px 0;
+      }
+section {
+      margin-bottom: 40px;
+      pdding: 20px;
+      border: 1px solid #FFFAE3;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      }

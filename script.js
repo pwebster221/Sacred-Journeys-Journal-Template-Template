@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (file.type === "file") { // Ensure it's a file, not a directory
         const listItem = document.createElement("li");
         const link = document.createElement("a");
-        link.href = file.html_url; // File's GitHub URL
+        link.href = file.path; // File's GitHub URL
         link.textContent = file.name; // File name
         link.target = "_blank"; // Open link in a new tab
         listItem.appendChild(link);
